@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "memory_agent": "./agent_graphs.py:memory_agent",
+    "basic_agent": "./agent_graphs.py:basic_agent",
+    "vision_agent": "./vision_graphs.py:vision_agent",
+    "vision_memory_agent": "./vision_graphs.py:vision_memory_agent"
+  },
+  "env": ".env"
+}

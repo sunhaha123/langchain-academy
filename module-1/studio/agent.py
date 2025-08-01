@@ -34,7 +34,13 @@ def divide(a: int, b: int) -> float:
 tools = [add, multiply, divide]
 
 # Define LLM with bound tools
-llm = ChatOpenAI(model="gpt-4o")
+# llm = ChatOpenAI(model="gpt-4o")
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
+proxy = os.environ.get("PROXY")
+llm = ChatOpenAI(model="gpt-4o", temperature=0, openai_proxy= f"http://{proxy}")
 llm_with_tools = llm.bind_tools(tools)
 
 # System message
